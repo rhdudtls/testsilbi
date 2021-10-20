@@ -20,14 +20,19 @@ if response.status_code == 200:
     soup2 = soup.prettify()
     result_list = soup2.split('\n')
 
-    for link in soup.find_all(attrs={'class': ['item brand-item']}):
+    for link in soup.find_all(attrs={'class': ['item brand-item', "num"]}):
         str = link.get_text(" ", strip=True)
-
-        array = str.rsplit(" ",1)
-        count = count+1
-            # print(count)
-            # print(array[0])
-            # print(array[1])
-        ws1.append([count,array[0],array[1]])
+        if len(str)==2:
+            floor = str
+            continue
+        elif len(str)==1: continue
+        else:
+            array = str.rsplit(" ",1)
+            count = count+1
+            print(count)
+            print(array[0])
+            print(array[1])
+            ws1.append([count,array[0],array[1],floor])
 
 wb.save("hyundai_crawl.xlsx")
+
