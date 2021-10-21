@@ -1,0 +1,2 @@
+com/example/silbi_android/BuildConfig.java
+ com.example.silbi_android.BuildConfig
