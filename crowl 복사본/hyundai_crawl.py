@@ -29,10 +29,9 @@ if response.status_code == 200:
         else:
             array = str.rsplit(" ",1)
             count = count+1
-            print(count)
-            print(array[0])
-            print(array[1])
+            # print(count)
+            # print(array[0])
+            # print(array[1])
             ws1.append([count,array[0],array[1],floor])
 
 wb.save("hyundai_crawl.xlsx")
-
